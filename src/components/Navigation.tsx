@@ -23,7 +23,7 @@ export function Navigation({ currentPage, setCurrentPage }: NavigationProps) {
       className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm"
     >
       <div className="max-w-[1600px] mx-auto px-8 lg:px-16">
-        <div className="flex items-center justify-between h-28">
+        <div className="flex items-center justify-between h-20 md:h-28">
           {/* Logo */}
           <motion.button
             onClick={() => setCurrentPage('home')}

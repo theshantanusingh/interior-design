@@ -23,7 +23,7 @@ export function Contact() {
   const budgets = ['$50k - $100k', '$100k - $250k', '$250k - $500k', '$500k+'];
 
   return (
-    <div className="pt-40 pb-32 min-h-screen">
+    <div className="pt-24 md:pt-40 pb-32 min-h-screen">
       {/* Header */}
       <div className="px-8 lg:px-16 mb-32">
         <div className="max-w-[1600px] mx-auto">
@@ -38,8 +38,8 @@ export function Contact() {
               <br />
               <span className="text-white/30">TOGETHER</span>
             </h1>
-            <p className="text-white/60 text-2xl max-w-3xl leading-relaxed">
-              Ready to transform your vision into reality? Share your project details 
+            <p className="text-white/60 text-lg md:text-2xl max-w-3xl leading-relaxed">
+              Ready to transform your vision into reality? Share your project details
               and let's begin crafting something extraordinary.
             </p>
           </motion.div>
@@ -71,7 +71,7 @@ export function Contact() {
               </div>
               <div>
                 <h3 className="text-white/40 tracking-[0.3em] text-sm mb-6">LOCATION</h3>
-                <p className="text-2xl">
+                <p className="text-lg md:text-2xl">
                   Ansal Plaza, G. Noida
                   <br />
                   U.P.

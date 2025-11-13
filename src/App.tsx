@@ -3,15 +3,25 @@ import { Navigation } from './components/Navigation';
 import { Home } from './components/Home';
 import { Gallery } from './components/Gallery';
 import { Contact } from './components/Contact';
+import { Loader } from './components/Loader';
 import { motion, AnimatePresence } from 'motion/react';
 import { CustomCursor } from './components/CustomCursor';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<'home' | 'gallery' | 'contact'>('home');
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [currentPage]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2500);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const pageVariants = {
     initial: { opacity: 0 },
@@ -22,8 +32,13 @@ export default function App() {
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
       <CustomCursor />
+
+      <AnimatePresence>
+        {isLoading && <Loader />}
+      </AnimatePresence>
+
       <Navigation currentPage={currentPage} setCurrentPage={setCurrentPage} />
-      
+
       <AnimatePresence mode="wait">
         {currentPage === 'home' && (
           <motion.div

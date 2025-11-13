@@ -94,7 +94,7 @@ export function Gallery() {
   };
 
   return (
-    <div className="pt-40 pb-32 px-8 lg:px-16 min-h-screen">
+    <div className="pt-24 md:pt-40 pb-32 px-8 lg:px-16 min-h-screen">
       <div className="max-w-[1600px] mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 60 }}
@@ -106,8 +106,8 @@ export function Gallery() {
           <h1 className="text-[clamp(2.5rem,8vw,10rem)] leading-[0.9] tracking-[-0.04em] mb-8">
             OUR WORK
           </h1>
-          <p className="text-white/60 text-2xl max-w-3xl leading-relaxed">
-            A curated collection of our most exceptional interior design projects, 
+          <p className="text-white/60 text-lg md:text-2xl max-w-3xl leading-relaxed">
+            A curated collection of our most exceptional interior design projects,
             each one a testament to our commitment to excellence and innovation.
           </p>
         </motion.div>
