@@ -73,7 +73,7 @@ export function Home({ setCurrentPage }: HomeProps) {
                 initial={{ y: 200 }}
                 animate={{ y: 0 }}
                 transition={{ duration: 1.2, delay: 0.7, ease: [0.76, 0, 0.24, 1] }}
-                className="text-[clamp(3rem,10vw,12rem)] leading-[0.9] tracking-[-0.04em] text-white/30"
+                className="text-[clamp(3rem,10vw,12rem)] leading-[0.9] tracking-[-0.04em] text-white"
               >
                 YOUR SPACE
               </motion.h1>
