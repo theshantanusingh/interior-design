@@ -23,7 +23,7 @@ export function Contact() {
   const budgets = ['$50k - $100k', '$100k - $250k', '$250k - $500k', '$500k+'];
 
   return (
-    <div className="pt-24 md:pt-40 pb-32 min-h-screen">
+    <div className="pt-32 md:pt-48 pb-32 min-h-screen">
       {/* Header */}
       <div className="px-8 lg:px-16 mb-32">
         <div className="max-w-[1600px] mx-auto">
@@ -31,8 +31,11 @@ export function Contact() {
             initial={{ opacity: 0, y: 60 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }}
-          >
+            className="mt-16"
+          ><br /><br /><br />
             <span className="text-white/40 tracking-[0.3em] text-sm mb-6 block">GET IN TOUCH</span>
+            <br />
+            <br />
             <h1 className="text-[clamp(2.5rem,8vw,10rem)] leading-[0.9] tracking-[-0.04em] mb-8">
               LET'S CREATE
               <br />

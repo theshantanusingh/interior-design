@@ -38,7 +38,7 @@ export function Home({ setCurrentPage }: HomeProps) {
   return (
     <div ref={containerRef} className="relative">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 md:pt-32">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 md:pt-40">
         <motion.div 
           style={{ y, opacity }}
           className="absolute inset-0 z-0"

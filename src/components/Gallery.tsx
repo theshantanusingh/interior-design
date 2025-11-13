@@ -94,15 +94,16 @@ export function Gallery() {
   };
 
   return (
-    <div className="pt-24 md:pt-40 pb-32 px-8 lg:px-16 min-h-screen">
+    <div className="pt-32 md:pt-48 pb-32 px-8 lg:px-16 min-h-screen">
       <div className="max-w-[1600px] mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }}
-          className="mb-32"
+          className="mb-32 mt-16"
         >
-          <span className="text-white/40 tracking-[0.3em] text-sm mb-6 block">PORTFOLIO</span>
+          <br /><br /><br />
+          <span className="text-white/40 tracking-[0.3em] text-sm mb-6 block mt-5">PORTFOLIO</span>
           <h1 className="text-[clamp(2.5rem,8vw,10rem)] leading-[0.9] tracking-[-0.04em] mb-8">
             OUR WORK
           </h1>

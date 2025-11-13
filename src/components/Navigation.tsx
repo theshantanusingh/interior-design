@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'motion/react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 interface NavigationProps {
   currentPage: 'home' | 'gallery' | 'contact';
@@ -8,6 +8,26 @@ interface NavigationProps {
 
 export function Navigation({ currentPage, setCurrentPage }: NavigationProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
 
   const navItems = [
     { id: 'home' as const, label: 'Home', number: '01' },
@@ -18,12 +38,16 @@ export function Navigation({ currentPage, setCurrentPage }: NavigationProps) {
   return (
     <motion.nav
       initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }}
+      animate={{
+        y: isVisible ? 0 : -100,
+        opacity: 1
+      }}
+      transition={{ duration: 0.3, ease: [0.76, 0, 0.24, 1] }}
       className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm"
     >
-      <div className="max-w-[1600px] mx-auto px-8 lg:px-16">
-        <div className="flex items-center justify-between h-20 md:h-28">
+      <br />
+      <div className="max-w-[1600px] mx-auto px-8 lg:px-16 ">
+        <div className="flex items-around justify-between h-20 md:h-28">
           {/* Logo */}
           <motion.button
             onClick={() => setCurrentPage('home')}
@@ -31,7 +55,7 @@ export function Navigation({ currentPage, setCurrentPage }: NavigationProps) {
             whileTap={{ scale: 0.95 }}
             className="relative group"
           >
-            <span className="text-white tracking-[-0.02em]">INTÉRIEUR</span>
+            <span className="text-white tracking-[-0.02em] ">INTÉRIEUR</span>
             <div className="absolute -bottom-2 left-0 w-0 h-[1px] bg-white group-hover:w-full transition-all duration-500" />
           </motion.button>
 
